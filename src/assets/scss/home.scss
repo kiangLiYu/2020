@@ -13,7 +13,7 @@
     }
   
     .header {
-      // height: calc(350px - 40px * 2);
+      min-height: calc(350px - 40px * 2);
       width: calc(910px - 350px);
       padding: 40px;
       padding-left: 350px;
@@ -72,6 +72,7 @@
         }
   
         &.location {
+          margin-bottom: 42px;
           font-size: 28px;
         }
 
