@@ -9,7 +9,7 @@
           <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多學生能在舞台上展現自我成長。
           <br />歡迎您參與贊助，支持 SITCON、讓我們將每年的活動辦得盡善盡美！
         </p>
-        <p>
+        <p class="give-me-money">
           <a
             href="https://bit.ly/donatesitcon2020"
             class="tons-trans give-me-money"
