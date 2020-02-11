@@ -1,33 +1,37 @@
 #app.main {
   #home.main-container {
-    align-items: flex-start;
-    margin: 0 350px;
     margin-top: $navbar-height;
-    padding-top: 170px;
-    width: calc(100% - 350px * 2);
 
-    @media screen and (max-width: 1200px) {
-      margin: 0;
-      margin-top: $navbar-height;
+    @media screen and (max-width: 900px) {
+      margin-top: $navbar-height-mobile;
       width: 100%;
     }
   
     .header {
-      width: calc(910px - 350px);
-      padding: 40px;
-      padding-left: 350px;
+      display: flex;
+      width: 50%;
+      padding: 30px 40px;
       background-color: $dark-3;
-      margin-left: -350px;
-      margin-bottom: 200px;
+      margin-left: calc(-50% + 40px);
+      margin-bottom: 40px;
 
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 900px) {
+        width: calc(100% - 40px * 2);
         margin-left: 0;
       }
 
-      @media screen and (max-width: 960px) {
-        width: calc(100% - 40px * 2);
-        height: auto;
-        padding: 40px;
+      @media screen and (max-width: 675px) {
+        margin: auto;
+        padding: 30px 40px;
+      }
+
+      .inner-container {
+        margin-left: auto;
+        margin-right: 0;
+
+        @media screen and (max-width: 900px) {
+          margin: auto;
+        }
       }
   
       h1.title,
@@ -39,7 +43,11 @@
       }
   
       h1.title {
-        font-size: 84px;
+        font-size: 56px;
+
+        @media screen and (max-width: 900px) {
+          font-size: 84px;
+        }
 
         @media screen and (max-width: 414px) {
           font-size: 72px;
@@ -51,8 +59,13 @@
       }
   
       h2.subtitle {
-        font-size: 42px;
-        margin-bottom: 42px;
+        font-size: 24px;
+        margin-bottom: 48px;
+
+        @media screen and (max-width: 900px) {
+          font-size: 42px;
+          margin-bottom: 42px;
+        }
 
         @media screen and (max-width: 414px) {
           font-size: 36px;
@@ -64,56 +77,115 @@
           margin-bottom: 28px;
         }
       }
-  
-      p {
-        &.date {
-          font-size: 32px;
-        }
-  
-        &.location {
-          margin-bottom: 42px;
-          font-size: 28px;
-        }
+    }
 
-        &.kktix {
-          margin-bottom: 0;
-          text-align: end;
-          font-size: 24px;
+    .info {
+      display: flex;
+      width: 100%;
+      margin-bottom: 80px;
+      
+      .left-container,
+      .right-container {
+        display: flex;
+        width: 50%;
+      }
 
-          a {
-            display: inline-block;
-            text-decoration: none;
-            margin-left: 16px;
-            padding: 8px 16px;
-            border: solid 2px $black;
-            color: $white;
-            background-color: $black;
+      .left-container {
+        flex-direction: column-reverse;
 
-            &:hover {
-              background-color: $tone;
-              border-color: $tone;
+        & > div {
+          padding: 16px 24px;
+          margin-left: auto;
+          background-color: $black;
+          color: $white;
+          transform: skewX(10deg);
+          border-top-right-radius: 40px;
+
+          & > div {
+            transform: skewX(-10deg);
+
+            .date {
+              font-size: 28px;
+              margin-bottom: 8px;
             }
-          }
-
-
-
-          @media screen and (max-width: 414px) {
-            text-align: start;
-            font-size: 18px;
-
-            a {
-              margin-left: 0;
-              margin-right: 16px;
+      
+            .location {
+              font-size: 24px;
             }
           }
         }
       }
-    }
-  }
 
-  .spotlight {
-    h1:first-child {
-      margin-bottom: 0.5em;
+      .right-container {
+        flex-direction: column-reverse;
+        
+        .kktix {
+          margin-left: 30%;
+          margin-right: auto;
+          text-align: end;
+          font-size: 28px;
+
+          a {
+            display: block;
+            margin-top: 16px;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-top-left-radius: 20px;
+            color: $white;
+            background-color: $black;
+            transform: skewX(-10deg);
+
+            span {
+              display: inline-block;
+              transform: skewX(10deg);
+            }
+
+            &:hover {
+              background-color: $tone;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        flex-direction: column;
+        margin: 80px auto;
+      
+        .left-container,
+        .right-container {
+          width: 100%;
+        }
+
+        .left-container{
+          & > div {
+            margin: auto;
+
+            & > div {
+              .date {
+                font-size: 22px;
+              }
+        
+              .location {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        .right-container {
+          .kktix {
+            margin: auto;
+            a {
+              border-top-left-radius: 0;
+              border-top-right-radius: 20px;
+              transform: skewX(10deg);
+              span {
+                transform: skewX(-10deg);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

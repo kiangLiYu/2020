@@ -9,8 +9,15 @@
           <br />希望能藉由您的一份力量，來促成活動的舉行，讓更多學生能在舞台上展現自我成長。
           <br />歡迎您參與贊助，支持 SITCON、讓我們將每年的活動辦得盡善盡美！
         </p>
-        <p class="give-me-money">
-          <a href="#" class="tons-trans give-me-money">個人贊助辦法</a>
+        <p>
+          <a
+            href="https://bit.ly/donatesitcon2020"
+            class="tons-trans give-me-money"
+            target="_blank"
+            rel="noopener"
+          >
+            個人贊助辦法
+          </a>
         </p>
         <p class="give-me-money">
           企業贊助亦歡迎來信
@@ -35,9 +42,15 @@
           :key="sponsor.slug"
           :class="`card ${entry[0] === 'holder' ? 'host' : 'org'}`"
         >
-          <a :href="`#${sponsor.url}`" target="_blank" rel="noopener">
-            <img :alt="sponsor.name" :src="sponsor.image" />
-          </a>
+          <div class="img-container">
+            <a
+              :href="`${sponsor.url}`"
+              target="_blank"
+              rel="noopener"
+            >
+              <img :alt="sponsor.name" :src="sponsor.image" />
+            </a>
+          </div>
           <div class="text-container">
             <h3>{{ sponsor.name }}</h3>
             <p>{{ sponsor.description.length > 60 && !sponsor.readmore ? `${sponsor.description.substr(0, 60)}...` : sponsor.description }}</p>
