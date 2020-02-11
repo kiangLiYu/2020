@@ -18,7 +18,7 @@
             href="mailto:contact@sitcon.org"
             target="_blank"
             rel="noopener"
-            class="give-me-money"
+            class="tons-trans give-me-money"
           >contact@sitcon.org</a>
         </p>
       </div>
